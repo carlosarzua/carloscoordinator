@@ -210,15 +210,17 @@ const Index = () => {
           </h3>
         </div>
         <div className="p-6">
-          <div className="bg-gray-50 rounded-lg p-4 min-h-[24rem] flex items-center justify-center">
-            <LazyLoad height={384} offset={100}>
+          <div className="bg-gray-50 rounded-lg p-4 min-h-[34rem] flex items-center justify-center">
+            <LazyLoad height={544} offset={100}>
               <iframe
-                src="https://zcal.co/carloscoordinator/japanese"
+                src="https://zcal.co/i/ulPXELUk?embed=1&embedType=iframe"
                 frameBorder="0"
                 className="zcal-embed"
+                id="zcal-invite-japanese"
                 title="Japanese Assessment/Free Trial Booking"
                 allow="calendar"
-                scrolling="yes"
+                scrolling="no"
+                loading="lazy"
               ></iframe>
             </LazyLoad>
           </div>
@@ -232,15 +234,17 @@ const Index = () => {
           </h3>
         </div>
         <div className="p-6">
-          <div className="bg-gray-50 rounded-lg p-4 min-h-[24rem] flex items-center justify-center">
-            <LazyLoad height={384} offset={100}>
+          <div className="bg-gray-50 rounded-lg p-4 min-h-[34rem] flex items-center justify-center">
+            <LazyLoad height={544} offset={100}>
               <iframe
-                src="https://zcal.co/carloscoordinator/language"
+                src="https://zcal.co/i/KhYrx_Zw?embed=1&embedType=iframe"
                 frameBorder="0"
                 className="zcal-embed"
-                title="Discovery Call Booking"
+                id="zcal-invite-language"
+                title="Discovery Call for English, Spanish, and Chinese"
                 allow="calendar"
-                scrolling="yes"
+                scrolling="no"
+                loading="lazy"
               ></iframe>
             </LazyLoad>
           </div>
