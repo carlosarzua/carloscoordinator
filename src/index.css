@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ...existing code... */
+
+/* @tailwind directives require Tailwind CSS processing. 
+   Remove these lines if not using Tailwind, or ensure your build pipeline uses Tailwind CSS. */
+
+.btn-primary, .btn-secondary, .btn-accent, .btn-outline {
+    @apply transition duration-200 transform hover:scale-105;
+  }
+
+  .btn-primary {
+    @apply bg-brand-blue hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-xl shadow-md transition duration-200 transform hover:scale-105 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-brand-orange hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-xl shadow-md transition duration-200 transform hover:scale-105 hover:shadow-lg;
+  }
+
+  .btn-accent {
+    @apply bg-brand-purple hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-xl shadow-md transition duration-200 transform hover:scale-105 hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-medium py-3 px-6 rounded-xl shadow-md transition duration-200 transform hover:scale-105 hover:shadow-lg;
+  }
+
+  .section {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+  
+  .language-selector {
+    @apply relative inline-block;
+  }
+
+  .language-selector-btn {
+    @apply flex items-center space-x-1 px-3 py-1 rounded-md hover:bg-gray-100;
+  }
+
+  .language-dropdown {
+    @apply absolute right-0 mt-2 py-2 w-32 bg-white border rounded-md shadow-lg z-50;
+  }
+
+  .language-option {
+    @apply block w-full px-4 py-2 text-left hover:bg-gray-100;
+  }
+
+  .fun-card {
+    @apply rounded-2xl bg-white shadow-lg border-2 border-transparent hover:border-brand-blue p-6 transition-all duration-300 hover:shadow-xl hover:scale-105;
+  }
+  
+  .blob-shape {
+    @apply absolute -z-10 rounded-full filter blur-3xl opacity-20;
+  }
+
+  .marquee-container {
+    @apply overflow-hidden whitespace-nowrap;
+  }
+
+  .marquee-content {
+  text-decoration-style: wavy;
+  text-decoration-color: theme('colors.brand.orange');
+  text-underline-offset: 6px;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-purple;
+}
