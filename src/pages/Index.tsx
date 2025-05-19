@@ -187,62 +187,57 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Booking Section */}
-      <section className="py-16 bg-gradient-to-br from-brand-blue/5 to-brand-purple/5 relative overflow-hidden" id="booking">
-        {/* Decorative blob */}
-        <div className="blob-shape bg-brand-yellow w-72 h-72 top-20 -right-20"></div>
-        
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="gradient-text mb-6">
-              {t("bookLesson")}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              {t("bookLessonSubtitle")}
-            </p>
-          </div>
+<section className="py-16 bg-gradient-to-br from-brand-blue/5 to-brand-purple/5 relative overflow-hidden" id="booking">
+  {/* Decorative blob */}
+  <div className="blob-shape bg-brand-yellow w-72 h-72 top-20 -right-20"></div>
+  
+  <div className="container-custom">
+    <div className="text-center mb-12">
+      <h2 className="gradient-text mb-6">
+        {t("bookLesson")}
+      </h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        {t("bookLessonSubtitle")}
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
-              <div className="bg-brand-blue p-6">
-                <h3 className="text-2xl font-bold text-white text-center">
-                  {t("bookTrialJapanese")}
-                </h3>
-              </div>
-              <div className="p-6">
-                <div className="bg-gray-50 rounded-lg p-4 h-96 flex items-center justify-center">
-                  {/* ZCal embedding would go here */}
-                  <iframe 
-                    src="https://zcal.co/carloscoordinator/japanese" 
-                    frameBorder="0" 
-                    className="w-full h-full"
-                    title="Japanese Classes Booking"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
-              <div className="bg-brand-purple p-6">
-                <h3 className="text-2xl font-bold text-white text-center">
-                  {t("bookTrialOther")}
-                </h3>
-              </div>
-              <div className="p-6">
-                <div className="bg-gray-50 rounded-lg p-4 h-96 flex items-center justify-center">
-                  {/* ZCal embedding would go here */}
-                  <iframe 
-                    src="https://zcal.co/carloscoordinator/language" 
-                    frameBorder="0" 
-                    className="w-full h-full"
-                    title="Other Languages Classes Booking"
-                  ></iframe>
-                </div>
-              </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
+        <div className="bg-brand-blue p-6">
+          <h3 className="text-2xl font-bold text-white text-center">
+            {t("bookTrialJapanese")}
+          </h3>
+        </div>
+        <div className="p-6">
+          <div className="bg-gray-50 rounded-lg p-4 min-h-[24rem] flex items-center justify-center">
+            <div className="zcal-inline-widget w-full" data-url="https://zcal.co/i/ulPXELUk">
+              <a href="https://zcal.co/i/ulPXELUk" className="text-brand-blue hover:underline font-medium">
+                {t("bookJapaneseTrialLink") || "Japanese Assessment/Free Trial - Schedule a meeting"}
+              </a>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
+        <div className="bg-brand-purple p-6">
+          <h3 className="text-2xl font-bold text-white text-center">
+            {t("bookTrialOther")}
+          </h3>
+        </div>
+        <div className="p-6">
+          <div className="bg-gray-50 rounded-lg p-4 min-h-[24rem] flex items-center justify-center">
+            <div className="zcal-inline-widget w-full" data-url="https://zcal.co/i/3giIaiX8">
+              <a href="https://zcal.co/i/3giIaiX8" className="text-brand-purple hover:underline font-medium">
+                {t("bookDiscoveryCallLink") || "Discovery Call - CarlosCoordinator - Schedule a meeting"}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Teachers Section */}
       <section className="py-16 bg-white" id="teachers">

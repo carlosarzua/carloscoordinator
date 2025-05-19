@@ -76,3 +76,9 @@
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-purple;
 }
+
+.zcal-inline-widget {
+  min-height: 24rem;
+  width: 100%;
+  overflow-y: auto;
+}

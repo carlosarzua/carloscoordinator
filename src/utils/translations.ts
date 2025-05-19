@@ -10,6 +10,10 @@ interface Translations {
 
 export const translations: Translations = {
   en: {
+    // zcal
+    bookJapaneseTrialLink: "Japanese Assessment/Free Trial - Schedule a meeting",
+    bookDiscoveryCallLink: "Discovery Call - CarlosCoordinator - Schedule a meeting",
+    
     // Navigation
     home: "Home",
     teachers: "Teachers",
@@ -163,6 +167,10 @@ export const translations: Translations = {
     japanIntern: "Japan Intern",
     travel: "Viajar a Japón",
 
+        // zcal
+    bookJapaneseTrialLink: "Clase de prueba de japonés gratis",
+    bookDiscoveryCallLink: "Toma de contacto: inglés, español o chino ",
+
         // My Narrow Road to the Interior
     narrowRoadDescription: "Así caminé 2200 km para recrear el viaje de Basho de 1689",
 
@@ -308,6 +316,10 @@ export const translations: Translations = {
     japanIntern: "Japan Intern",
     travel: "Voyage au Japon",
 
+        // zcal
+    bookJapaneseTrialLink: "Japanese Assessment/Free Trial - Schedule a meeting",
+    bookDiscoveryCallLink: "Discovery Call - CarlosCoordinator - Schedule a meeting",
+
     // My Narrow Road to the Interior
     narrowRoadDescription: "J'ai marché 2200 km pour recréer le voyage de Bashō de 1689",
     
@@ -452,6 +464,10 @@ export const translations: Translations = {
     radical: "Radical",
     japanIntern: "Japan Intern",
     travel: "Viaxar a Xapón",
+
+        // zcal
+    bookJapaneseTrialLink: "Clase de proba de xaponés de balde",
+    bookDiscoveryCallLink: "Toma de contacto: inglés, español ou chinés ",
 
     // My Narrow Road to the Interior
     narrowRoadDescription: "Andei 2200 km para recrear a viaxe de Basho de 1689",
