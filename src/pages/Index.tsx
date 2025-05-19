@@ -12,6 +12,7 @@ import { ResourceList } from "@/components/ResourceList";
 import { SocialLinks } from "@/components/SocialLinks";
 import { ArrowRight, Book, Smartphone, Globe, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazyload";
 
 const Index = () => {
   const { t } = useLanguage();
@@ -210,11 +211,16 @@ const Index = () => {
         </div>
         <div className="p-6">
           <div className="bg-gray-50 rounded-lg p-4 min-h-[24rem] flex items-center justify-center">
-            <div className="zcal-inline-widget w-full" data-url="https://zcal.co/i/ulPXELUk">
-              <a href="https://zcal.co/i/ulPXELUk" className="text-brand-blue hover:underline font-medium">
-                {t("bookJapaneseTrialLink") || "Japanese Assessment/Free Trial - Schedule a meeting"}
-              </a>
-            </div>
+            <LazyLoad height={384} offset={100}>
+              <iframe
+                src="https://zcal.co/carloscoordinator/japanese"
+                frameBorder="0"
+                className="zcal-embed"
+                title="Japanese Assessment/Free Trial Booking"
+                allow="calendar"
+                scrolling="yes"
+              ></iframe>
+            </LazyLoad>
           </div>
         </div>
       </div>
@@ -227,11 +233,16 @@ const Index = () => {
         </div>
         <div className="p-6">
           <div className="bg-gray-50 rounded-lg p-4 min-h-[24rem] flex items-center justify-center">
-            <div className="zcal-inline-widget w-full" data-url="https://zcal.co/i/3giIaiX8">
-              <a href="https://zcal.co/i/3giIaiX8" className="text-brand-purple hover:underline font-medium">
-                {t("bookDiscoveryCallLink") || "Discovery Call - CarlosCoordinator - Schedule a meeting"}
-              </a>
-            </div>
+            <LazyLoad height={384} offset={100}>
+              <iframe
+                src="https://zcal.co/carloscoordinator/language"
+                frameBorder="0"
+                className="zcal-embed"
+                title="Discovery Call Booking"
+                allow="calendar"
+                scrolling="yes"
+              ></iframe>
+            </LazyLoad>
           </div>
         </div>
       </div>
