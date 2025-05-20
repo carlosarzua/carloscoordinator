@@ -93,5 +93,5 @@ iframe.zcal-embed {
 }
 
 .marquee-content {
-  @apply decoration-wavy decoration-brand-orange underline-offset-6;
+  @apply decoration-wavy decoration-brand-orange underline-offset-4;
 }
