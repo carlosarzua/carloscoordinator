@@ -188,6 +188,7 @@ const Index = () => {
         </div>
       </section>
 
+// Booking section in src/pages/Index.tsx:
 <section className="py-16 bg-gradient-to-br from-brand-blue/5 to-brand-purple/5 relative overflow-hidden" id="booking">
   {/* Decorative blob */}
   <div className="blob-shape bg-brand-yellow w-72 h-72 top-20 -right-20"></div>
