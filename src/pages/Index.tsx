@@ -188,6 +188,7 @@ const Index = () => {
         </div>
       </section>
 
+{/*Booking section  */}
 <section className="py-16 bg-gradient-to-br from-brand-blue/5 to-brand-purple/5 relative overflow-hidden" id="booking">
   {/* Decorative blob */}
   <div className="blob-shape bg-brand-yellow w-72 h-72 top-20 -right-20"></div>
@@ -202,7 +203,7 @@ const Index = () => {
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 gap-8">
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
         <div className="bg-brand-blue p-6">
           <h3 className="text-2xl font-bold text-white text-center">
@@ -210,12 +211,12 @@ const Index = () => {
           </h3>
         </div>
         <div className="p-6">
-          <div className="bg-gray-50 rounded-lg p-4 min-h-[34rem] flex items-center justify-center">
-            <LazyLoad height={544} offset={100}>
+          <div className="bg-gray-50 rounded-lg min-h-[55rem] flex items-start">
+            <LazyLoad height={884} offset={100}>
               <iframe
                 src="https://zcal.co/i/ulPXELUk?embed=1&embedType=iframe"
                 frameBorder="0"
-                className="zcal-embed"
+                className="zcal-embed w-full min-w-[700px]"
                 id="zcal-invite-japanese"
                 title="Japanese Assessment/Free Trial Booking"
                 allow="calendar"
@@ -234,12 +235,12 @@ const Index = () => {
           </h3>
         </div>
         <div className="p-6">
-          <div className="bg-gray-50 rounded-lg p-4 min-h-[34rem] flex items-center justify-center">
-            <LazyLoad height={544} offset={100}>
+          <div className="bg-gray-50 rounded-lg min-h-[60rem] flex items-start">
+            <LazyLoad height={966} offset={100}>
               <iframe
                 src="https://zcal.co/i/KhYrx_Zw?embed=1&embedType=iframe"
                 frameBorder="0"
-                className="zcal-embed"
+                className="zcal-embed w-full min-w-[700px]"
                 id="zcal-invite-language"
                 title="Discovery Call for English, Spanish, and Chinese"
                 allow="calendar"

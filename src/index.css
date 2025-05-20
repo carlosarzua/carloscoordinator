@@ -79,6 +79,7 @@
 
 iframe.zcal-embed {
   width: 100%;
+  min-width: 700px; /* Increased to match iframe setting */
   min-height: 544px; /* zcal's minimum */
   height: 966px; /* Default to tallest recommended height (Discovery Call) */
   border: none;
@@ -88,6 +89,7 @@ iframe.zcal-embed {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   iframe.zcal-embed {
+    min-width: 320px; /* zcal's minimum width for mobile */
     min-height: 544px;
     height: 600px; /* Reduced for mobile */
   }
