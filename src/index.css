@@ -86,13 +86,17 @@ iframe.zcal-embed {
 /* Specific heights for each iframe */
 iframe#zcal-invite-japanese {
   min-height: 544px; /* zcal's minimum */
-  width: 100%;
+  min-width: 320px;
+  height: 884px; 
+  width: 1096px;
   height: 966px; /* zcal's recommended height for Japanese */
 }
 
 iframe#zcal-invite-language {
   min-height: 544px; /* zcal's minimum */
+  min-width: 320px;
   width: 100%;
+  width: 1096px;
   height: 884px; /* zcal's recommended height for English/Spanish/Chinese */
 }
 
@@ -105,12 +109,14 @@ iframe#zcal-invite-language {
   iframe#zcal-invite-japanese {
     min-height: 544px;
     width: 100%;
+    min-width: 320px;
     height: 966px; /* Increased to match desktop height */
   }
 
   iframe#zcal-invite-language {
     min-height: 544px;
     width: 100%;
+    min-width: 320px;
     height: 884px; /* Increased to match desktop height */
   }
 }
