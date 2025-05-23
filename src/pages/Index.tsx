@@ -219,7 +219,6 @@ const Index = () => {
               id="zcal-invite-japanese"
               title="Japanese Assessment/Free Trial Booking"
               allow="calendar"
-              scrolling="no"
               loading="lazy"
             ></iframe>
           </LazyLoad>
@@ -241,10 +240,9 @@ const Index = () => {
               id="zcal-invite-language"
               title="Discovery Call for English, Spanish, and Chinese"
               allow="calendar"
-              scrolling="no"
               loading="lazy"
             ></iframe>
-          </LazyLoad>
+             </LazyLoad>
         </div>
       </div>
     </div>
