@@ -193,7 +193,7 @@ const Index = () => {
   {/* Decorative blob */}
   <div className="blob-shape bg-brand-yellow w-72 h-72 top-20 -right-20"></div>
   
-  <div className="container-custom">
+  <div className="container-custom w-full">
     <div className="text-center mb-12">
       <h2 className="gradient-text mb-6">
         {t("bookLesson")}
@@ -204,13 +204,13 @@ const Index = () => {
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500 w-full">
         <div className="bg-brand-blue p-3">
           <h3 className="text-2xl font-bold text-white text-center">
             {t("bookTrialJapanese")}
           </h3>
         </div>
-        <div className="bg-gray-50 rounded-lg flex items-start">
+        <div className="bg-gray-50 rounded-lg flex items-start w-full">
           <LazyLoad height={966} offset={100}>
             <iframe
               src="https://zcal.co/i/ulPXELUk?embed=1&embedType=iframe"
@@ -226,13 +226,13 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500 w-full">
         <div className="bg-brand-purple p-3">
           <h3 className="text-2xl font-bold text-white text-center">
             {t("bookTrialOther")}
           </h3>
         </div>
-        <div className="bg-gray-50 rounded-lg flex items-start">
+        <div className="bg-gray-50 rounded-lg flex items-start w-full">
           <LazyLoad height={884} offset={100}>
             <iframe
               src="https://zcal.co/i/3giIaiX8?embed=1&embedType=iframe"

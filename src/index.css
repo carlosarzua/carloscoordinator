@@ -32,7 +32,7 @@
   }
 
 .container-custom {
-  @apply max-w-full mx-auto px-4 sm:px-6 lg:px-8;
+  @apply max-w-full mx-auto w-full; /* Ensure container is full width */
 }
 
   .card-hover {
@@ -117,4 +117,9 @@ iframe#zcal-invite-language {
 
 .marquee-content {
   @apply decoration-wavy decoration-brand-orange underline-offset-4;
+}
+
+/* Make sure the booking card's inner container is full width */
+.bg-gray-50 {
+  @apply w-full; /* Add this to ensure it stretches */
 }
