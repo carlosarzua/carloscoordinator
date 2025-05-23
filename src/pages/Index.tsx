@@ -193,7 +193,7 @@ const Index = () => {
   {/* Decorative blob */}
   <div className="blob-shape bg-brand-yellow w-72 h-72 top-20 -right-20"></div>
   
-  <div className="container-custom px-2 sm:px-4 lg:px-6">
+  <div className="container-custom">
     <div className="text-center mb-12">
       <h2 className="gradient-text mb-6">
         {t("bookLesson")}
@@ -210,21 +210,19 @@ const Index = () => {
             {t("bookTrialJapanese")}
           </h3>
         </div>
-        <div className="p-3">
-          <div className="bg-gray-50 rounded-lg flex items-start">
-            <LazyLoad height={966} offset={100}>
-              <iframe
-                src="https://zcal.co/i/ulPXELUk?embed=1&embedType=iframe"
-                frameBorder="0"
-                className="zcal-embed w-full"
-                id="zcal-invite-japanese"
-                title="Japanese Assessment/Free Trial Booking"
-                allow="calendar"
-                scrolling="no"
-                loading="lazy"
-              ></iframe>
-            </LazyLoad>
-          </div>
+        <div className="bg-gray-50 rounded-lg flex items-start">
+          <LazyLoad height={966} offset={100}>
+            <iframe
+              src="https://zcal.co/i/ulPXELUk?embed=1&embedType=iframe"
+              frameBorder="0"
+              className="zcal-embed w-full"
+              id="zcal-invite-japanese"
+              title="Japanese Assessment/Free Trial Booking"
+              allow="calendar"
+              scrolling="no"
+              loading="lazy"
+            ></iframe>
+          </LazyLoad>
         </div>
       </div>
 
@@ -234,21 +232,19 @@ const Index = () => {
             {t("bookTrialOther")}
           </h3>
         </div>
-        <div className="p-3">
-          <div className="bg-gray-50 rounded-lg flex items-start">
-            <LazyLoad height={884} offset={100}>
-              <iframe
-                src="https://zcal.co/i/3giIaiX8?embed=1&embedType=iframe"
-                frameBorder="0"
-                className="zcal-embed w-full"
-                id="zcal-invite-language"
-                title="Discovery Call for English, Spanish, and Chinese"
-                allow="calendar"
-                scrolling="no"
-                loading="lazy"
-              ></iframe>
-            </LazyLoad>
-          </div>
+        <div className="bg-gray-50 rounded-lg flex items-start">
+          <LazyLoad height={884} offset={100}>
+            <iframe
+              src="https://zcal.co/i/3giIaiX8?embed=1&embedType=iframe"
+              frameBorder="0"
+              className="zcal-embed w-full"
+              id="zcal-invite-language"
+              title="Discovery Call for English, Spanish, and Chinese"
+              allow="calendar"
+              scrolling="no"
+              loading="lazy"
+            ></iframe>
+          </LazyLoad>
         </div>
       </div>
     </div>
