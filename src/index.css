@@ -79,7 +79,6 @@
 
 iframe.zcal-embed {
   width: 100%;
-  max-width: 1096px; /* zcal's recommended width */
   border: none;
   display: block; /* Ensure block display to avoid inline quirks */
 }
@@ -98,18 +97,17 @@ iframe#zcal-invite-language {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   iframe.zcal-embed {
-    max-width: 100%;
     min-width: 320px; /* zcal's minimum width for mobile */
   }
 
   iframe#zcal-invite-japanese {
     min-height: 544px;
-    height: 600px; /* Reduced for mobile */
+    height: 966px; /* Increased to match desktop height */
   }
 
   iframe#zcal-invite-language {
     min-height: 544px;
-    height: 600px; /* Reduced for mobile */
+    height: 884px; /* Increased to match desktop height */
   }
 }
 

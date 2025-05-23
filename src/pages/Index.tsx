@@ -193,7 +193,7 @@ const Index = () => {
   {/* Decorative blob */}
   <div className="blob-shape bg-brand-yellow w-72 h-72 top-20 -right-20"></div>
   
-  <div className="container-custom px-4 sm:px-6 lg:px-8">
+  <div className="container-custom px-2 sm:px-4 lg:px-6">
     <div className="text-center mb-12">
       <h2 className="gradient-text mb-6">
         {t("bookLesson")}
@@ -203,14 +203,14 @@ const Index = () => {
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
-        <div className="bg-brand-blue p-4">
+        <div className="bg-brand-blue p-3">
           <h3 className="text-2xl font-bold text-white text-center">
             {t("bookTrialJapanese")}
           </h3>
         </div>
-        <div className="p-4">
+        <div className="p-3">
           <div className="bg-gray-50 rounded-lg flex items-start">
             <LazyLoad height={966} offset={100}>
               <iframe
@@ -229,12 +229,12 @@ const Index = () => {
       </div>
 
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
-        <div className="bg-brand-purple p-4">
+        <div className="bg-brand-purple p-3">
           <h3 className="text-2xl font-bold text-white text-center">
             {t("bookTrialOther")}
           </h3>
         </div>
-        <div className="p-4">
+        <div className="p-3">
           <div className="bg-gray-50 rounded-lg flex items-start">
             <LazyLoad height={884} offset={100}>
               <iframe
