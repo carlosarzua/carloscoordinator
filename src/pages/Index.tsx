@@ -188,11 +188,11 @@ const Index = () => {
         </div>
       </section>
 
-{/*Booking section  */}
+{/* Booking section */}
 <section className="py-16 bg-gradient-to-br from-brand-blue/5 to-brand-purple/5 relative overflow-hidden" id="booking">
   {/* Decorative blob */}
   <div className="blob-shape bg-brand-yellow w-72 h-72 top-20 -right-20"></div>
-  
+
   <div className="container-custom">
     <div className="text-center mb-12">
       <h2 className="gradient-text mb-6">
@@ -204,18 +204,19 @@ const Index = () => {
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* Japanese Trial Card */}
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
         <div className="bg-brand-blue p-3">
           <h3 className="text-2xl font-bold text-white text-center">
             {t("bookTrialJapanese")}
           </h3>
         </div>
-        <div className="bg-gray-50 rounded-lg flex items-start">
+        <div className="bg-gray-50 rounded-lg flex justify-center items-start px-2 py-4">
           <LazyLoad height={966} offset={100}>
             <iframe
               src="https://zcal.co/i/ulPXELUk?embed=1&embedType=iframe"
               frameBorder="0"
-              className="zcal-embed w-full"
+              className="zcal-embed w-full max-w-[1096px] min-w-[320px] h-[966px]"
               id="zcal-invite-japanese"
               title="Japanese Assessment/Free Trial Booking"
               allow="calendar"
@@ -225,29 +226,31 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Other Languages Trial Card */}
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
         <div className="bg-brand-purple p-3">
           <h3 className="text-2xl font-bold text-white text-center">
             {t("bookTrialOther")}
           </h3>
         </div>
-        <div className="bg-gray-50 rounded-lg flex items-start">
+        <div className="bg-gray-50 rounded-lg flex justify-center items-start px-2 py-4">
           <LazyLoad height={884} offset={100}>
             <iframe
               src="https://zcal.co/i/3giIaiX8?embed=1&embedType=iframe"
               frameBorder="0"
-              className="zcal-embed w-full"
+              className="zcal-embed w-full max-w-[1096px] min-w-[320px] h-[884px]"
               id="zcal-invite-language"
               title="Discovery Call for English, Spanish, and Chinese"
               allow="calendar"
               loading="lazy"
             ></iframe>
-             </LazyLoad>
+          </LazyLoad>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
       {/* Teachers Section */}
       <section className="py-16 bg-white" id="teachers">
