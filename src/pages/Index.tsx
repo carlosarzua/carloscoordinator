@@ -184,7 +184,11 @@ const Index = () => {
             })}
           </div>
           {/* ResourceList updated to handle correct visibleItems */}
-          <ResourceList items={visibleItems} />
+          <div className="overflow-x-auto">
+            <div className="flex flex-nowrap gap-x-4 pb-2">
+              <ResourceList items={visibleItems} />
+            </div>
+          </div>
         </div>
       </section>
 
