@@ -19,7 +19,6 @@ const Radical = () => {
       <div className="pt-20">
         <div className="container-custom py-4">
         </div>
-        
         <iframe
           src="https://carlosarzua.github.io/kanji-dictionary/"
           title="Radical Dictionary"
