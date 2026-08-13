@@ -1,71 +1,97 @@
-
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Link } from "react-router-dom";
+import { ArrowRight, Mail } from "lucide-react";
+
+const CONTACT_EMAIL =
+  "mailto:carlosarzua@usal.es?subject=Travel%20enquiry%20-%20CarlosCoordinator";
+const WALK_THE_WORLD = "https://www.linkedin.com/company/wtw-walktheworld/home/";
 
 const Travel = () => {
   const { t } = useLanguage();
 
+  const destinations = [
+    {
+      title: t("travelJapanTitle"),
+      body: t("travelJapanBox"),
+      links: [
+        { label: t("walkTheWorldCta"), href: WALK_THE_WORLD, external: true, primary: true, icon: <ArrowRight size={16} /> },
+        { label: t("travelContactCta"), href: CONTACT_EMAIL, icon: <Mail size={16} /> },
+      ],
+    },
+    {
+      title: t("travelHimalayasTitle"),
+      body: t("travelHimalayasBox"),
+      links: [
+        {
+          label: t("travelNewsletterCta"),
+          href: "https://www.linkedin.com/newsletters/my-narrow-road-to-the-interior-7148990295269855232/",
+          external: true,
+          primary: true,
+          icon: <ArrowRight size={16} />,
+        },
+      ],
+    },
+    {
+      title: t("travelSpainTitle"),
+      body: t("travelSpainBox"),
+      links: [
+        { label: t("walkTheWorldCta"), href: WALK_THE_WORLD, external: true, primary: true, icon: <ArrowRight size={16} /> },
+        { label: t("travelContactCta"), href: CONTACT_EMAIL, icon: <Mail size={16} /> },
+      ],
+    },
+  ];
+
   return (
     <>
-      <div className="min-h-screen w-full bg-gradient-to-br from-brand-lightblue via-[#FAF4EC] to-brand-purple/10">
-        <Navbar />
-        <div className="pt-20 pb-16">
-          <div className="container-custom">
-            <div className="text-center py-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">{t("travelTitle")}</h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t("travelDescription")}</p>
-            </div>
-            {/* Top wide box */}
-            <div className="bg-white rounded-lg shadow-md p-6 mb-8 text-gray-600 text-lg text-center">
-              I share tips and offer services regarding staying for cheap, incredible adventures in Japan, what to do, including partnernships with other agencies, and advice for long term travelers and digital nomads.
-              <br />
-              I also offer paid services for customized plans, finding accomodation in cheaper ways that would require you to speak Japanese (but I would handle that for the client).
-            </div>
-            {/* Three horizontal boxes */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col">
-                <h2 className="text-2xl font-bold mb-4">Travel to Japan</h2>
-                <p className="text-gray-600 mb-4 flex-1">
-                  Advice for travel, finding accommodation, insider tips for Japanese adventures.
+      <Navbar />
+      <main className="min-h-screen bg-slate-50 pt-28 md:pt-32 pb-20">
+        <div className="container-custom">
+          <header className="text-center max-w-2xl mx-auto mb-10">
+            <span className="eyebrow">{t("travelEyebrow")}</span>
+            <h1 className="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4">
+              {t("travelTitle")}
+            </h1>
+            <p className="text-lg text-muted-foreground">{t("travelDescription")}</p>
+          </header>
+
+          <div className="max-w-3xl mx-auto bg-white rounded-xl border border-border shadow-sm p-6 md:p-8 mb-10">
+            <p className="text-muted-foreground leading-relaxed text-center">
+              {t("travelPageIntro")}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {destinations.map((d) => (
+              <div
+                key={d.title}
+                className="flex flex-col bg-white rounded-xl border border-border shadow-sm p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <h2 className="text-xl font-bold text-brand-dark mb-3">{d.title}</h2>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+                  {d.body}
                 </p>
-                <Link to="/contact" className="btn-primary inline-block mt-auto">
-                  Contact for Services
-                </Link>
+                <div className="flex flex-wrap gap-2">
+                  {d.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                      className={`${link.primary ? "btn-primary" : "btn-outline"} text-sm`}
+                    >
+                      {link.label} {link.icon}
+                    </a>
+                  ))}
+                </div>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col">
-                <h2 className="text-2xl font-bold mb-4">Travel to the Himalayas</h2>
-                <p className="text-gray-600 mb-4 flex-1">
-                  I am a brand ambassador for Himalaya Explore Line, where I climbed the Himalayas in March 2025.
-                  Read about my adventure in my LinkedIn newsletter!
-                </p>
-                <a
-                  href="https://www.linkedin.com/newsletters/my-narrow-road-to-the-interior-7148990295269855232/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary mt-auto"
-                >
-                  My Narrow Road to the Interior
-                </a>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6 flex flex-col">
-                <h2 className="text-2xl font-bold mb-4">Travel to Spain</h2>
-                <p className="text-gray-600 mb-4 flex-1">
-                  Planning trips to Spain, local experiences, hiking, cultural recommendations and more.
-                </p>
-                <Link to="/contact" className="btn-primary inline-block mt-auto">
-                  Contact Me
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </>
   );
 };
 
 export default Travel;
-

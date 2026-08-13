@@ -13,7 +13,7 @@ export const Navbar = () => {
     typeof window !== "undefined" ? window.innerWidth : 1200
   );
 
-  const isMobile = windowWidth < 768;
+  const isMobile = windowWidth < 1024;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -40,7 +40,7 @@ export const Navbar = () => {
   };
 
   const navButtonClass =
-    "flex flex-col items-center justify-center w-full px-2 py-1 rounded-lg font-semibold text-xs leading-tight bg-white transition duration-200 hover:scale-105 h-[44px] md:px-4 md:py-2 md:text-sm md:h-[70px]";
+    "flex flex-col items-center justify-center text-center w-full px-2 py-1 rounded-lg font-semibold text-xs leading-tight bg-white transition duration-200 hover:scale-105 h-[44px] lg:px-2 lg:py-2 lg:text-[13px] lg:h-[60px] lg:w-[132px]";
 
   return (
     <header
@@ -50,25 +50,25 @@ export const Navbar = () => {
           : "py-3 bg-white bg-opacity-95 backdrop-blur-md"
       }`}
     >
-      <div className="container-custom flex flex-wrap md:flex-nowrap justify-between items-center min-h-[64px]">
+      <div className="container-custom flex flex-wrap lg:flex-nowrap justify-between items-center min-h-[64px]">
         {/* Desktop logo */}
         <Link
           to="/"
-          className="hidden md:flex text-xl font-bold gradient-text leading-none text-left items-center min-h-[64px]"
+          className="hidden lg:flex text-xl font-bold gradient-text leading-none text-left items-center min-h-[64px]"
           style={{ whiteSpace: "pre-line", lineHeight: "1" }}
         >
           Carlos{"\n"}Coordinator
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center min-h-[64px]">
+        <nav className="hidden lg:flex items-center gap-1 min-h-[64px]">
           <Link
             to="/radical"
             className={navButtonClass}
             style={{ backgroundColor: "#000", color: "#00b4d8" }}
           >
             <span
-              className="text-base font-bold leading-tight"
+              className="text-sm font-bold leading-tight"
               style={{ color: "#00b4d8" }}
             >
               Radical
@@ -85,7 +85,7 @@ export const Navbar = () => {
             className={navButtonClass}
             style={{ backgroundColor: "#7c3aed", color: "#fff" }}
           >
-            <span className="text-base font-bold leading-tight">
+            <span className="text-sm font-bold leading-tight">
               N1-N2 Course
             </span>
             <span className="text-xs font-normal leading-tight">
@@ -99,7 +99,7 @@ export const Navbar = () => {
             className={navButtonClass}
             style={{ backgroundColor: "rgb(239,210,180)", color: "black" }}
           >
-            <span className="text-base font-bold leading-tight">
+            <span className="text-sm font-bold leading-tight">
               JapanIntern.Net
             </span>
             <span className="text-xs font-normal leading-tight">
@@ -115,17 +115,17 @@ export const Navbar = () => {
               textAlign: "center",
             }}
           >
-            <span className="text-base font-bold leading-tight block w-full">
-              Travel to Japan
+            <span className="text-sm font-bold leading-tight block w-full">
+              Walk the World
             </span>
             <span
               className="text-xs font-normal leading-tight block w-full"
               style={{ color: "#fff" }}
             >
-              the Himalayas & Spain
+              Japan & Spain
             </span>
           </Link>
-          <div className="flex flex-col items-center ml-2">
+          <div className="flex flex-col items-center ml-2 w-[132px]">
             <DynamicLanguagePrompt />
             <LanguageSelector />
           </div>
@@ -135,7 +135,7 @@ export const Navbar = () => {
         </nav>
 
         {/* Mobile top row */}
-        <div className="flex md:hidden flex-col w-full">
+        <div className="flex lg:hidden flex-col w-full">
           <div className="flex flex-row items-center justify-between w-full px-2" style={{ minHeight: 48 }}>
             <Link
               to="/"
@@ -145,9 +145,8 @@ export const Navbar = () => {
               Carlos{"\n"}Coordinator
             </Link>
             <div className="flex items-center gap-2">
-              <DynamicLanguagePrompt />
               <LanguageSelector />
-              <button onClick={toggleMenu}>
+              <button onClick={toggleMenu} aria-label="Toggle menu">
                 {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
             </div>
@@ -166,7 +165,7 @@ export const Navbar = () => {
                 style={{ backgroundColor: "#000", color: "#00b4d8" }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <span className="text-base font-bold leading-tight" style={{ color: "#00b4d8" }}>
+                <span className="text-sm font-bold leading-tight" style={{ color: "#00b4d8" }}>
                   Radical
                 </span>
               </Link>
@@ -176,7 +175,7 @@ export const Navbar = () => {
                 style={{ backgroundColor: "#7c3aed", color: "#fff" }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <span className="text-base font-bold leading-tight">
+                <span className="text-sm font-bold leading-tight">
                   N1-N2 Course
                 </span>
               </Link>
@@ -188,7 +187,7 @@ export const Navbar = () => {
                 style={{ backgroundColor: "rgb(239,210,180)", color: "black" }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <span className="text-base font-bold leading-tight">
+                <span className="text-sm font-bold leading-tight">
                   JapanIntern.Net
                 </span>
               </a>
@@ -202,8 +201,8 @@ export const Navbar = () => {
                 }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <span className="text-base font-bold leading-tight block w-full">
-                  Travel to Japan
+                <span className="text-sm font-bold leading-tight block w-full">
+                  Walk the World
                 </span>
               </Link>
             </div>

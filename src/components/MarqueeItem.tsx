@@ -1,8 +1,26 @@
 import { ReactNode } from "react";
-import { Book, Smartphone, FileText, Video, Youtube, Film, ListVideo } from "lucide-react";
+import {
+  Book,
+  Smartphone,
+  FileText,
+  Video,
+  Youtube,
+  Film,
+  ListVideo,
+  Apple,
+  Play,
+  Globe,
+  ArrowRight,
+  Trophy,
+} from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ResourceActionButtons } from "./ResourceActionButtons";
 import { ResourceMediaPreview } from "./ResourceMediaPreview";
+
+export interface StoreLinks {
+  ios?: string;
+  android?: string;
+  web?: string;
+}
 
 interface MarqueeItemProps {
   type: string;
@@ -11,8 +29,25 @@ interface MarqueeItemProps {
   link?: string;
   comingSoon?: boolean;
   image?: string;
-  actions?: string[];
+  storeLinks?: StoreLinks;
 }
+
+const iconByType: Record<string, ReactNode> = {
+  Interview: <Trophy size={15} />,
+  Book: <Book size={15} />,
+  App: <Smartphone size={15} />,
+  Resource: <FileText size={15} />,
+  Video: <Video size={15} />,
+  Playlist: <ListVideo size={15} />,
+  ShortVideo: <Film size={15} />,
+  Series: <Youtube size={15} />,
+};
+
+const typeLabel: Record<string, string> = {
+  ShortVideo: "Short video",
+  Interview: "Success story",
+};
+
 export const MarqueeItem = ({
   type,
   title,
@@ -20,60 +55,78 @@ export const MarqueeItem = ({
   link,
   comingSoon = false,
   image,
-  actions = []
+  storeLinks,
 }: MarqueeItemProps) => {
   const { t } = useLanguage();
 
-  const getIcon = (): ReactNode => {
-    switch (type) {
-      case "Book":
-        return <Book size={24} className="text-brand-blue" />;
-      case "App":
-        return <Smartphone size={24} className="text-brand-purple" />;
-      case "Resource":
-        return <FileText size={24} className="text-brand-green" />;
-      case "Video":
-        return <Video size={24} className="text-brand-red" />;
-      case "Playlist":
-        return <ListVideo size={24} className="text-brand-yellow" />;
-      case "ShortVideo":
-        return <Film size={24} className="text-brand-orange" />;
-      case "Series":
-        return <Youtube size={24} className="text-brand-red" />;
-      default:
-        return null;
-    }
-  };
+  const pill =
+    "inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-md transition-colors";
+  const pillPrimary = `${pill} bg-brand-blue text-white hover:bg-brand-blue/90`;
+  const pillGhost = `${pill} border border-border text-brand-dark hover:border-brand-blue hover:text-brand-blue`;
 
-  // Fix: Always show border (even on hover)
-  const boxContent = (
-    <div className="fun-card mx-3 bg-white inline-flex flex-col min-w-[250px] max-w-[340px] w-full h-[340px] relative transition-all duration-300 hover:shadow-lg group overflow-hidden border-2 border-brand-blue hover:border-brand-blue">
-      <div className="flex items-center gap-2 mb-1 h-8">
-        {getIcon()}
-        <span className="text-sm font-bold uppercase text-gray-500">{type}</span>
+  const ctaLabel =
+    type === "Book"
+      ? t("ctaRead")
+      : type === "Video" || type === "Playlist" || type === "Series" || type === "ShortVideo" || type === "Interview"
+      ? t("ctaWatch")
+      : t("ctaOpen");
+
+  const hasStore = storeLinks && (storeLinks.ios || storeLinks.android || storeLinks.web);
+
+  return (
+    <div className="fun-card flex flex-col h-full relative">
+      {(image || (link && (link.includes("youtube") || link.includes("youtu.be")))) && (
+        <div className="mb-4">
+          <ResourceMediaPreview type={type} link={link || ""} image={image} />
+        </div>
+      )}
+
+      <div className="flex items-center gap-1.5 mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+        {iconByType[type]}
+        <span>{typeLabel[type] || type}</span>
       </div>
-      <h3 className="text-base font-bold mb-1 line-clamp-3">{title}</h3>
-      <div className="mb-2 w-full">
-        <ResourceMediaPreview type={type} link={link || ""} image={image} />
+
+      <h3 className="text-base font-bold text-brand-dark mb-1.5 leading-snug line-clamp-2">
+        {title}
+      </h3>
+      <p className="text-sm text-muted-foreground line-clamp-3 mb-4">{description}</p>
+
+      <div className="mt-auto flex flex-wrap gap-2">
+        {hasStore ? (
+          <>
+            {storeLinks?.web && (
+              <a href={storeLinks.web} className={pillPrimary}>
+                <Globe size={14} /> {t("ctaOpen")}
+              </a>
+            )}
+            {storeLinks?.ios && (
+              <a href={storeLinks.ios} target="_blank" rel="noopener noreferrer" className={pillGhost}>
+                <Apple size={14} /> App Store
+              </a>
+            )}
+            {storeLinks?.android && (
+              <a href={storeLinks.android} target="_blank" rel="noopener noreferrer" className={pillGhost}>
+                <Play size={14} /> Google Play
+              </a>
+            )}
+          </>
+        ) : comingSoon || !link || link === "#" ? null : (
+          <a
+            href={link}
+            target={link.startsWith("/") ? undefined : "_blank"}
+            rel={link.startsWith("/") ? undefined : "noopener noreferrer"}
+            className={pillPrimary}
+          >
+            {ctaLabel} <ArrowRight size={14} />
+          </a>
+        )}
       </div>
-      <div className="text-sm text-gray-600 line-clamp-3 mb-2">{description}</div>
-      <div className="mt-auto">
-        <ResourceActionButtons actions={actions || []} />
-      </div>
+
       {comingSoon && (
-        <div className="absolute top-2 right-2 bg-amber-500 text-white text-xs px-2 py-1 rounded-md">
+        <div className="absolute top-3 right-3 bg-brand-yellow text-brand-dark text-[11px] font-semibold px-2 py-0.5 rounded-md shadow-sm">
           {t("comingSoon")}
         </div>
       )}
     </div>
   );
-
-  if (link && link !== "#") {
-    return (
-      <a href={link} target="_blank" rel="noopener noreferrer" className="no-underline block">
-        {boxContent}
-      </a>
-    );
-  }
-  return boxContent;
 };

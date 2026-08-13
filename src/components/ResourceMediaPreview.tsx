@@ -41,7 +41,7 @@ export const ResourceMediaPreview = ({ type, link, image }: ResourceMediaPreview
   if (isYouTube(link)) {
     const embed = getYouTubeEmbed(link);
     return embed ? (
-      <div className="aspect-video rounded-md overflow-hidden mb-2">
+      <div className="aspect-video rounded-lg overflow-hidden bg-slate-100">
         <iframe
           src={embed}
           allow="autoplay; encrypted-media"
@@ -56,11 +56,14 @@ export const ResourceMediaPreview = ({ type, link, image }: ResourceMediaPreview
 
   if (image) {
     return (
-      <img
-        src={image}
-        alt=""
-        className="object-cover w-full aspect-video rounded-md mb-2"
-      />
+      <div className="aspect-video rounded-lg overflow-hidden bg-slate-50 flex items-center justify-center">
+        <img
+          src={image}
+          alt=""
+          loading="lazy"
+          className="w-full h-full object-contain"
+        />
+      </div>
     );
   }
   return null;

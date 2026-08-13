@@ -20,7 +20,7 @@ export const DynamicLanguagePrompt = () => {
   }, []);
 
   return (
-    <div className="text-xs text-gray-500 text-center mb-1 transition-all min-h-[1.2em]">
+    <div className="w-full text-center text-[11px] text-gray-500 mb-1 min-h-[1.2em] whitespace-nowrap overflow-hidden">
       {prompts[idx]}
     </div>
   );

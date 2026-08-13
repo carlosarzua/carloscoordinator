@@ -2,81 +2,154 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ...existing code... */
+/* ------------------------------------------------------------------ */
+/*  Design tokens                                                      */
+/* ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 38% 17%;
 
-/* @tailwind directives require Tailwind CSS processing. 
-   Remove these lines if not using Tailwind, or ensure your build pipeline uses Tailwind CSS. */
+    --card: 0 0% 100%;
+    --card-foreground: 210 38% 17%;
 
-.btn-primary, .btn-secondary, .btn-accent, .btn-outline {
-    @apply transition duration-200 transform hover:scale-105;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 38% 17%;
+
+    --primary: 226 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 38% 17%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 210 38% 17%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 226 100% 65%;
+
+    --radius: 0.6rem;
   }
 
-  .btn-primary {
-    @apply bg-brand-blue hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-xl shadow-md transition duration-200 transform hover:scale-105 hover:shadow-lg;
+  * {
+    @apply border-border;
   }
 
-  .btn-secondary {
-    @apply bg-brand-orange hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-xl shadow-md transition duration-200 transform hover:scale-105 hover:shadow-lg;
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
   }
 
-  .btn-accent {
-    @apply bg-brand-purple hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-xl shadow-md transition duration-200 transform hover:scale-105 hover:shadow-lg;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-brand-dark;
   }
+}
 
-  .btn-outline {
-    @apply border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-medium py-3 px-6 rounded-xl shadow-md transition duration-200 transform hover:scale-105 hover:shadow-lg;
+/* ------------------------------------------------------------------ */
+/*  Components                                                         */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .section {
-    @apply py-12 md:py-16 lg:py-20;
+    @apply py-16 md:py-20;
   }
 
-.container-custom {
-  @apply max-w-full mx-auto px-4 sm:px-6 lg:px-8;
-}
+  /* Small uppercase label above a heading */
+  .eyebrow {
+    @apply inline-block text-xs font-semibold uppercase tracking-widest text-brand-blue mb-3;
+  }
+
+  /* Buttons — restrained, professional */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-brand-blue text-white font-semibold py-3 px-6 rounded-lg shadow-sm transition-colors duration-200 hover:bg-brand-blue/90;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-brand-dark text-white font-semibold py-3 px-6 rounded-lg shadow-sm transition-colors duration-200 hover:bg-brand-dark/90;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 bg-brand-purple text-white font-semibold py-3 px-6 rounded-lg shadow-sm transition-colors duration-200 hover:bg-brand-purple/90;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-brand-blue text-brand-blue font-semibold py-3 px-6 rounded-lg transition-colors duration-200 hover:bg-brand-blue hover:text-white;
+  }
 
   .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md;
   }
-  
+
+  /* Clean content card used across the site */
+  .fun-card {
+    @apply rounded-xl bg-white border border-border shadow-sm p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-brand-blue/40;
+  }
+
   .language-selector {
     @apply relative inline-block;
   }
-
   .language-selector-btn {
-    @apply flex items-center space-x-1 px-3 py-1 rounded-md hover:bg-gray-100;
+    @apply flex items-center space-x-1 px-3 py-1.5 rounded-md text-sm hover:bg-gray-100 transition-colors;
   }
-
   .language-dropdown {
-    @apply absolute right-0 mt-2 py-2 w-32 bg-white border rounded-md shadow-lg z-50;
+    @apply absolute right-0 mt-2 py-2 w-40 bg-white border border-border rounded-lg shadow-lg z-50;
   }
-
   .language-option {
-    @apply block w-full px-4 py-2 text-left hover:bg-gray-100;
+    @apply block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Utilities                                                          */
+/* ------------------------------------------------------------------ */
+@layer utilities {
+  /* Kept for the wordmark / occasional accent only */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-purple;
   }
 
-  .fun-card {
-    @apply rounded-2xl bg-white shadow-lg border-2 border-transparent hover:border-brand-blue p-6 transition-all duration-300 hover:shadow-xl hover:scale-105;
-  }
-  
+  /* Legacy decorative blobs are retired in the redesign */
   .blob-shape {
-    @apply absolute -z-10 rounded-full filter blur-3xl opacity-20;
+    display: none !important;
   }
 
-  .marquee-container {
-    @apply overflow-hidden whitespace-nowrap;
+  /* Seamless horizontal marquee (track holds two copies of the content) */
+  @keyframes marquee-x {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-x 38s linear infinite;
+  }
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
   }
 
-  .marquee-content {
-  text-decoration-style: wavy;
-  text-decoration-color: theme('colors.brand.orange');
-  text-underline-offset: 6px;
-}
-
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-purple;
-}
-
-.marquee-content {
-  @apply decoration-wavy decoration-brand-orange underline-offset-4;
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }

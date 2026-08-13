@@ -13,25 +13,25 @@ export const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">CarlosCoordinator.com</h3>
             <p className="text-gray-300 mb-4">
-              Professional language learning with expert teachers.
+              {t("footerTagline")}
             </p>
             <div className="flex space-x-4">
-              <a href="https://linkedin.com" className="text-gray-300 hover:text-white transition-all duration-200 hover:scale-110 transform">
+              <a href="https://www.linkedin.com/in/carlosramosfuentes/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-300 hover:text-white transition-all duration-200 hover:scale-110 transform">
                 <Linkedin size={24} />
               </a>
-              <a href="https://youtube.com" className="text-gray-300 hover:text-white transition-all duration-200 hover:scale-110 transform">
+              <a href="https://www.youtube.com/@carloscoordinator" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-gray-300 hover:text-white transition-all duration-200 hover:scale-110 transform">
                 <Youtube size={24} />
               </a>
-              <a href="https://instagram.com" className="text-gray-300 hover:text-white transition-all duration-200 hover:scale-110 transform">
+              <a href="https://www.instagram.com/carloscoordinator" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-300 hover:text-white transition-all duration-200 hover:scale-110 transform">
                 <Instagram size={24} />
               </a>
-              <a href="https://tiktok.com/@carloscoordinator" className="text-gray-300 hover:text-white transition-all duration-200 hover:scale-110 transform">
+              <a href="https://www.tiktok.com/@carloscoordinator" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-gray-300 hover:text-white transition-all duration-200 hover:scale-110 transform">
                 <Music size={24} className="transform rotate-45" />
               </a>
             </div>
           </div>
           <div>
-            <h4 className="text-lg font-bold mb-4 text-white">Navigation</h4>
+            <h4 className="text-lg font-bold mb-4 text-white">{t("navHeading")}</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-white transition duration-200 flex items-center gap-2">
@@ -67,12 +67,18 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <span className="text-gray-300">Keigo Pro</span>
-                <span className="ml-2 text-xs bg-brand-purple px-2 py-0.5 rounded-full">Soon</span>
+                <a
+                  href="https://apps.apple.com/jp/app/keigo-pro/id6760846155?l=en-US"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition duration-200"
+                >
+                  Keigo Pro
+                </a>
               </li>
               <li>
                 <span className="text-gray-300">Hiragana Hero</span>
-                <span className="ml-2 text-xs bg-brand-orange px-2 py-0.5 rounded-full">Soon</span>
+                <span className="ml-2 text-xs bg-brand-orange px-2 py-0.5 rounded-full">{t("comingSoonShort")}</span>
               </li>
             </ul>
           </div>
@@ -94,7 +100,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="mt-12 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400">{t("copyright")}</p>
+          <p className="text-gray-400 text-sm">© {new Date().getFullYear()} CarlosCoordinator. {t("rightsReserved")}</p>
           {/* Remove privacy/terms links */}
         </div>
       </div>
