@@ -87,7 +87,7 @@ export const translations: Translations = {
     // Hero (redesign)
     heroEyebrow: "Japanese · English · Spanish · Chinese",
     heroTitle2: "Japanese lessons that finally make sense",
-    heroLead: "Most Japanese teachers make you memorise endlessly and hope it sticks. I teach differently — personalised lessons in your own language, built around kanji radicals, real texts and clear logic. My students pass the JLPT N1 and N2, get into top universities, and actually use Japanese with confidence.",
+    heroLead: "Hundreds of professionals have trusted me with their Japanese over the past ten years. Using 7Step — the framework I developed during my PhD — English and Spanish speakers reach fluency faster and learn kanji up to three times quicker, by finally making sense of the sound radicals hidden in most kanji. Every lesson is personalised, taught in your own language, and built for real use and passing the JLPT.",
     showMore: "Show more",
     showLess: "Show less",
     trustGoogle: "on Google",
@@ -305,7 +305,7 @@ export const translations: Translations = {
     // Hero (redesign)
     heroEyebrow: "Japonés · Inglés · Español · Chino",
     heroTitle2: "Clases de japonés que por fin tienen sentido",
-    heroLead: "La mayoría de los profesores de japonés te hacen memorizar sin parar y esperar a que se quede. Yo enseño de otra forma: clases personalizadas en tu propio idioma, construidas alrededor de los radicales de los kanji, textos reales y una lógica clara. Mis alumnos aprueban el JLPT N1 y N2, entran en las mejores universidades y usan el japonés con confianza.",
+    heroLead: "Cientos de profesionales me han confiado su japonés en los últimos diez años. Con 7Step, el método que desarrollé durante mi doctorado, los hablantes de inglés y español alcanzan la fluidez antes y aprenden los kanji hasta tres veces más rápido, entendiendo por fin los radicales fonéticos que esconde la mayoría de los kanji. Cada clase es personalizada, en tu propio idioma, y está pensada para usar el japonés de verdad y aprobar el JLPT.",
     showMore: "Ver más",
     showLess: "Ver menos",
     trustGoogle: "en Google",
@@ -523,7 +523,7 @@ export const translations: Translations = {
     // Hero (redesign)
     heroEyebrow: "Japonais · Anglais · Espagnol · Chinois",
     heroTitle2: "Des cours de japonais qui ont enfin du sens",
-    heroLead: "La plupart des professeurs de japonais vous font mémoriser sans fin en espérant que ça tienne. J'enseigne autrement : des cours personnalisés dans votre propre langue, construits autour des radicaux des kanji, de textes réels et d'une logique claire. Mes élèves réussissent le JLPT N1 et N2, entrent dans les meilleures universités et utilisent le japonais avec confiance.",
+    heroLead: "Depuis dix ans, des centaines de professionnels m'ont confié leur japonais. Avec 7Step, la méthode que j'ai mise au point pendant mon doctorat, les anglophones et hispanophones atteignent la fluidité plus vite et apprennent les kanji jusqu'à trois fois plus rapidement, en comprenant enfin les radicaux phonétiques cachés dans la plupart des kanji. Chaque cours est personnalisé, donné dans votre propre langue, et pensé pour un usage réel du japonais et pour réussir le JLPT.",
     showMore: "Voir plus",
     showLess: "Voir moins",
     trustGoogle: "sur Google",
@@ -742,7 +742,7 @@ export const translations: Translations = {
     // Hero (redesign)
     heroEyebrow: "Xaponés · Inglés · Español · Chinés",
     heroTitle2: "Clases de xaponés que por fin teñen sentido",
-    heroLead: "A maioría dos profesores de xaponés fanche memorizar sen parar e esperar a que quede. Eu ensino doutra forma: clases personalizadas na túa propia lingua, construídas arredor dos radicais dos kanji, textos reais e unha lóxica clara. Os meus alumnos aproban o JLPT N1 e N2, entran nas mellores universidades e usan o xaponés con confianza.",
+    heroLead: "Centos de profesionais confiáronme o seu xaponés nos últimos dez anos. Con 7Step, o método que desenvolvín durante o meu doutoramento, os falantes de inglés e español acadan a fluidez antes e aprenden os kanji ata tres veces máis rápido, entendendo por fin os radicais fonéticos que agocha a maioría dos kanji. Cada clase é personalizada, na túa propia lingua, e está pensada para usar o xaponés de verdade e aprobar o JLPT.",
     showMore: "Ver máis",
     showLess: "Ver menos",
     trustGoogle: "en Google",
